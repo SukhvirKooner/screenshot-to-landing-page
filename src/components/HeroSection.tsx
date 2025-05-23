@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -21,9 +20,27 @@ const HeroSection = () => {
       <div 
         className="fixed inset-0 pointer-events-none z-0"
         style={{
-          background: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 30%, transparent 70%)`
+          background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.18) 30%, transparent 70%)`
         }}
       />
+
+      {/* Silhouette figure for shadow effect */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
+        <svg
+          width="600"
+          height="900"
+          viewBox="0 0 320 480"
+          fill="black"
+          fillOpacity="0.7"
+          style={{
+            filter: `drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 8}px ${(mousePosition.y - window.innerHeight / 2) / 8}px 120px rgba(0,0,0,0.95)) drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 16}px ${(mousePosition.y - window.innerHeight / 2) / 16}px 24px rgba(0,0,0,0.85))`
+          }}
+        >
+          <ellipse cx="160" cy="120" rx="90" ry="120" /> {/* Head/shoulders */}
+          <rect x="55" y="200" width="210" height="250" rx="90" /> {/* Body */}
+          <ellipse cx="160" cy="470" rx="90" ry="40" /> {/* Base shadow */}
+        </svg>
+      </div>
       
       <div className="relative z-10 pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
