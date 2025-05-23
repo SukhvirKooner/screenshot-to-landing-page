@@ -1,0 +1,92 @@
+
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+
+const HeroSection = () => {
+  const [chatText, setChatText] = useState('');
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+      
+      <div className="relative z-10 pt-32 pb-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Main headline */}
+          <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-tight">
+            Magic Your Site
+            <br />
+            <span className="text-6xl md:text-7xl">Chat by Chat</span>
+          </h1>
+
+          {/* Subheadline */}
+          <div className="mb-12 text-orange-400 text-lg">
+            👋 Hey! We're Wegic. Chat with us, share your website vision, and we'll build it in 1 minute.
+          </div>
+
+          {/* Chat interface */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl p-6 text-black text-left shadow-2xl">
+              <div className="text-gray-500 text-sm mb-4">
+                I want you to help me complete a website. Let me tell you my requirements: I would like to write a comprehensive guide about training dogs for beginners, sharing my experience in dog training, and offering mentorship tips.
+                <br /><br />
+                For players.
+                <br />
+                Display my product information to attract visitors to inquire actively.
+              </div>
+              
+              <div className="flex items-center space-x-2 mt-6">
+                <Button 
+                  className="bg-black text-white hover:bg-gray-800 px-6 py-2 rounded-lg"
+                >
+                  Build Via Chat
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-gray-300 text-gray-600 hover:bg-gray-50 px-6 py-2 rounded-lg"
+                >
+                  Build Via Link
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Category buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <Button className="bg-gray-800/50 text-white border border-gray-600 rounded-full px-6 py-3 hover:bg-gray-700">
+              📚 Online education platform
+            </Button>
+            <Button className="bg-gray-800/50 text-white border border-gray-600 rounded-full px-6 py-3 hover:bg-gray-700">
+              🛒 E-commerce product page
+            </Button>
+            <Button className="bg-gray-800/50 text-white border border-gray-600 rounded-full px-6 py-3 hover:bg-gray-700">
+              🎮 Game community
+            </Button>
+            <Button className="bg-gray-800/50 text-white border border-gray-600 rounded-full px-6 py-3 hover:bg-gray-700">
+              📦 Product display page
+            </Button>
+            <Button className="bg-gray-800/50 text-white border border-gray-600 rounded-full px-6 py-3 hover:bg-gray-700">
+              🎨 Design studio
+            </Button>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="text-gray-400 text-sm">
+            SCROLL TO EXPLORE ⭕
+          </div>
+        </div>
+      </div>
+
+      {/* Award badge */}
+      <div className="absolute bottom-8 right-8 text-right">
+        <div className="bg-gray-800/50 rounded-lg p-3 text-xs border border-gray-600">
+          🏆 Golden Kitty Awards
+          <br />
+          <span className="font-bold">2024</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
