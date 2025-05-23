@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -16,40 +17,43 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Cursor flashlight effect */}
-      <div 
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.18) 30%, transparent 70%)`
-        }}
-      />
-
-      {/* Silhouette figure for shadow effect */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none select-none">
-        <svg
-          width="600"
-          height="900"
-          viewBox="0 0 320 480"
-          fill="black"
-          fillOpacity="0.7"
-          style={{
-            filter: `drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 8}px ${(mousePosition.y - window.innerHeight / 2) / 8}px 120px rgba(0,0,0,0.95)) drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 16}px ${(mousePosition.y - window.innerHeight / 2) / 16}px 24px rgba(0,0,0,0.85))`
-          }}
-        >
-          <ellipse cx="160" cy="120" rx="90" ry="120" /> {/* Head/shoulders */}
-          <rect x="55" y="200" width="210" height="250" rx="90" /> {/* Body */}
-          <ellipse cx="160" cy="470" rx="90" ry="40" /> {/* Base shadow */}
-        </svg>
-      </div>
       
       <div className="relative z-10 pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Main headline */}
-          <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-tight">
-            Magic Your Site
-            <br />
-            <span className="text-6xl md:text-7xl">Chat by Chat</span>
-          </h1>
+          {/* Hero title area with flashlight effect */}
+          <div className="relative mb-12">
+            {/* Cursor flashlight effect - limited to title area */}
+            <div 
+              className="absolute inset-0 pointer-events-none z-0"
+              style={{
+                background: `radial-gradient(circle 400px at ${mousePosition.x}px ${mousePosition.y - window.scrollY}px, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 30%, transparent 70%)`
+              }}
+            />
+
+            {/* Silhouette figure for shadow effect */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+              <svg
+                width="600"
+                height="500"
+                viewBox="0 0 320 280"
+                fill="black"
+                fillOpacity="0.6"
+                style={{
+                  filter: `drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 8}px ${(mousePosition.y - window.innerHeight / 2) / 8}px 80px rgba(0,0,0,0.9)) drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 16}px ${(mousePosition.y - window.innerHeight / 2) / 16}px 20px rgba(0,0,0,0.8))`
+                }}
+              >
+                <ellipse cx="160" cy="80" rx="70" ry="90" /> {/* Head/shoulders */}
+                <rect x="75" y="140" width="170" height="120" rx="70" /> {/* Body */}
+              </svg>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="relative z-10 text-7xl md:text-8xl font-bold leading-tight">
+              Magic Your Site
+              <br />
+              <span className="text-6xl md:text-7xl">Chat by Chat</span>
+            </h1>
+          </div>
 
           {/* Subheadline */}
           <div className="mb-12 text-orange-400 text-lg">
