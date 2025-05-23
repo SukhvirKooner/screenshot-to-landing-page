@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -17,11 +16,11 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Cursor flashlight effect - contained within hero section */}
+      {/* Cursor flashlight effect */}
       <div 
-        className="absolute inset-0 pointer-events-none z-0"
+        className="fixed inset-0 pointer-events-none z-0"
         style={{
-          background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.18) 30%, transparent 70%)`
+          background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 30%, transparent 70%)`
         }}
       />
 
@@ -37,9 +36,12 @@ const HeroSection = () => {
             filter: `drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 8}px ${(mousePosition.y - window.innerHeight / 2) / 8}px 120px rgba(0,0,0,0.95)) drop-shadow(${(mousePosition.x - window.innerWidth / 2) / 16}px ${(mousePosition.y - window.innerHeight / 2) / 16}px 24px rgba(0,0,0,0.85))`
           }}
         >
-          <ellipse cx="160" cy="120" rx="90" ry="120" /> {/* Head/shoulders */}
-          <rect x="55" y="200" width="210" height="250" rx="90" /> {/* Body */}
-          <ellipse cx="160" cy="470" rx="90" ry="40" /> {/* Base shadow */}
+          {/* Triangle head */}
+          <path d="M160 40 L220 120 L100 120 Z" />
+          {/* Body */}
+          <rect x="55" y="200" width="210" height="250" rx="90" />
+          {/* Base shadow */}
+          <ellipse cx="160" cy="470" rx="90" ry="40" />
         </svg>
       </div>
       
