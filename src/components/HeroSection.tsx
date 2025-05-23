@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -16,9 +17,9 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Cursor flashlight effect */}
+      {/* Cursor flashlight effect - contained within hero section */}
       <div 
-        className="fixed inset-0 pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
           background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.18) 30%, transparent 70%)`
         }}
@@ -42,7 +43,7 @@ const HeroSection = () => {
         </svg>
       </div>
       
-      <div className="relative z-10 pt-32 pb-20 px-6">
+      <div className="relative z-20 pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main headline */}
           <h1 className="text-7xl md:text-8xl font-bold mb-8 leading-tight">
